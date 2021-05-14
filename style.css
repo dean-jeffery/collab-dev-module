@@ -1,0 +1,51 @@
+/* 
+Colours:
+
+Black: #282828
+Dark blue: #354871
+Teal: #83FFC3
+White: #f6f6f6
+Grey: #ebebeb
+*/
+
+#properties {
+  font-family: Montserrat, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+#properties td,
+#properties th {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+#properties tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#properties tr:hover {
+  background-color: #ddd;
+}
+
+#properties th {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #354871;
+  color: white;
+}
+
+.wrapper{
+  max-width: 80%;
+  margin: 0 auto;
+}
+.button{
+  background-color: #83FFC3;
+  color: #282828;
+  padding: 2px;
+}
+
+body{
+  letter-spacing: 1px;
+}
