@@ -9,7 +9,6 @@ Grey: #ebebeb
 */
 
 #properties {
-  font-family: Montserrat, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
   text-align: center;
@@ -36,16 +35,31 @@ Grey: #ebebeb
   color: white;
 }
 
-.wrapper{
+.wrapper {
   max-width: 80%;
   margin: 0 auto;
 }
-.button{
-  background-color: #83FFC3;
+.button {
+  background-color: #83ffc3;
   color: #282828;
-  padding: 2px;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
-body{
+body {
+  font-family: Montserrat, Helvetica, sans-serif;
   letter-spacing: 1px;
+}
+
+H1 {
+  color: #354871;
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.navbar {
+  display: inline;
 }
