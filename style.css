@@ -138,3 +138,32 @@ header {
   padding: 25px 0;
   width: 40%;
 }
+/* ////////////////////// */
+.form-wrapper {
+  border: 1px solid rgba(229, 229, 229, 0.25);
+}
+
+.form-heading {
+  background-color: #354871;
+  -webkit-box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%);
+  -moz-box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%);
+  box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%);
+}
+.form-heading h2 {
+  text-align: center;
+  color: #f6f6f6;
+}
+.responsive-form {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+.responsive-form label {
+	margin: 5px 10px 5px 0;
+}
+
+.responsive-form input {
+	vertical-align: middle;
+	border: 1px solid #ebebeb;
+}
