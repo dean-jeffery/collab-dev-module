@@ -6,6 +6,7 @@
 	2. 	Navbar
 	3.  Table
 	4.  Buttons
+	5.  Forms
 
 >>> Color codes
 
@@ -138,7 +139,10 @@ header {
   padding: 25px 0;
   width: 40%;
 }
-/* ////////////////////// */
+/* -------------------------------------------------------------------------- */
+/*	5. Forms
+/* -------------------------------------------------------------------------- */
+
 .form-wrapper {
   border: 1px solid rgba(229, 229, 229, 0.25);
 }
@@ -154,16 +158,69 @@ header {
   color: #f6f6f6;
 }
 .responsive-form {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 .responsive-form label {
-	margin: 5px 10px 5px 0;
+  margin: 5px 10px 5px 0;
 }
 
 .responsive-form input {
-	vertical-align: middle;
-	border: 1px solid #ebebeb;
+  vertical-align: middle;
+  border: 1px solid #ebebeb;
+}
+
+.form-inline {
+  display: inline;
+}
+
+/* TEMP */
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
 }
