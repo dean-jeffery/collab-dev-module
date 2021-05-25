@@ -12,7 +12,7 @@
 
 Dark Blue: #354871
 black: #282828
-Teal: #83FFC3
+green: #83FFC3
 White: #F6F6F6
 Grey: #EBEBEB
 
@@ -144,14 +144,18 @@ header {
 /* -------------------------------------------------------------------------- */
 
 .form-wrapper {
-  border: 1px solid rgba(229, 229, 229, 0.25);
+  border: 5px solid red;
 }
 
 .form-heading {
   background-color: #354871;
-  -webkit-box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%);
+  /* -webkit-box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%);
   -moz-box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%);
-  box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%);
+  box-shadow: 0 2px 40px 1px rgba(57, 63, 72, 15%); */
+  box-shadow: 0 10px 40px 1px #e7e7e7;
+  padding: 15px 0;
+  border-radius: 0.3rem;
+  
 }
 .form-heading h2 {
   text-align: center;
@@ -186,6 +190,7 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+  box-sizing: border-box;
 }
 
 label {
@@ -194,13 +199,19 @@ label {
 }
 
 input[type="submit"] {
-  background-color: #04aa6d;
-  color: white;
+  background-color: #83FFC3;
+  color: black;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.3rem;
   cursor: pointer;
   float: right;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+form .row {
+	padding-top: 10px;
 }
 
 .col-25 {

@@ -22,7 +22,7 @@
       <!-- Button row -->
       <div class="button-space">
         <a href="add.html" class="button">Add</a>
-        <a href="" class="button">Edit</a>
+        <a href="edit.html" class="button">Edit</a>
       </div>
       <!-- Property table -->
       <table id="properties">
