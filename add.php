@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +15,7 @@
     <div class="wrapper">
       <ul>
         <li>
-        <a href="index.html"><h1>Complete Property Solutions</h1></a>
+        <a href="index.php"><h1>Complete Property Solutions</h1></a>
         </li>
       </ul>
     </div>
@@ -24,21 +25,21 @@
   <!-- 80% content wrapper -->
   <!-- Button row -->
     <div class="button-space">
-      <a href="index.html" class="button">Home</a>
-      <a href="edit.html" class="button">Edit</a>
+      <a href="index.php" class="button">Home</a>
+      <a href="edit.php" class="button">Edit</a>
     </div>
       <div class="form-heading">
         <h2>Add New Property</h2>
       </div>
-      <!-- TEMP -->
-      <form action="#">
-      <!-- Address -->
+<!-- ADD PROPERTY FORM -->
+      <form action="insert.php" method="POST">
+      <!-- Property Name -->
         <div class="row">
           <div class="col-25">
-            <label for="adress">Address</label>
+            <label for="propertyName">Property Name:</label>
           </div>
           <div class="col-75">
-            <input type="text" id="adress" name="address" placeholder="Property address..">
+            <input type="text" id="propertyName" name="propertyName" placeholder="Property Name..">
           </div>
         </div>
         <!-- Landlord -->
@@ -84,13 +85,40 @@
             <input type="text" id="tenants" name="tenants" placeholder="Tenants names.."/>
           </div>
         </div>
-        <!-- Inspection Required -->
+        <!-- Actions Due -->
         <div class="row">
           <div class="col-25">
-            <label for="inspection">Inspection Required</label>
+            <label for="actionsDue">Actions Due</label>
           </div>
           <div class="col-75">
-            <input type="text" id="inspection" name="inspection" placeholder="Inspection Required?"/>
+            <input type="text" id="actionsDue" name="actionsDue" placeholder="Actions Due"/>
+          </div>
+        </div>
+        <!-- Actions Type -->
+        <div class="row">
+          <div class="col-25">
+            <label for="actionType">Action Type</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="actionType" name="actionType" placeholder="Action Type"/>
+          </div>
+        </div>
+        <!-- Inspections Due -->
+        <div class="row">
+          <div class="col-25">
+            <label for="inspectionsDue">Inspections Due</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="inspectionsDue" name="inspectionsDue" placeholder="Inspections Due"/>
+          </div>
+        </div>
+         <!-- Inspection Type -->
+         <div class="row">
+          <div class="col-25">
+            <label for="inspectionType">Inspection Type</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="inspectionType" name="inspectionType" placeholder="Inspection Type"/>
           </div>
         </div>
         <!-- Notes -->
@@ -103,7 +131,7 @@
           </div>
         </div>
         <div class="row">
-          <input type="submit" value="Submit">
+          <button type="submit" name="submit">Submit</button>
         </div>
       </form>
   </div>

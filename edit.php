@@ -14,7 +14,7 @@
     <div class="wrapper">
       <ul>
         <li>
-        <a href="index.html"><h1>Complete Property Solutions</h1></a>
+        <a href="index.php"><h1>Complete Property Solutions</h1></a>
         </li>
       </ul>
     </div>
@@ -24,8 +24,8 @@
   <!-- 80% content wrapper -->
   <!-- Button row -->
     <div class="button-space">
-      <a href="index.html" class="button">Home</a>
-      <a href="add.html" class="button">Add</a>
+      <a href="index.php" class="button">Home</a>
+      <a href="add.php" class="button">Add</a>
     </div>
       <div class="form-heading">
         <h2>Edit Property</h2>
