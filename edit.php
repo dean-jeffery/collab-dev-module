@@ -1,111 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit | Complete Property Solutions</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-  <!-- HEADER -->
-  <header>
-    <div class="wrapper">
-      <ul>
-        <li>
-        <a href="index.php"><h1>Complete Property Solutions</h1></a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <!-- BODY -->
-  <div class="wrapper">
-  <!-- 80% content wrapper -->
-  <!-- Button row -->
-    <div class="button-space">
-      <a href="index.php" class="button">Home</a>
-      <a href="add.php" class="button">Add</a>
-    </div>
-      <div class="form-heading">
-        <h2>Edit Property</h2>
-      </div>
-      <!-- TEMP -->
-      <form action="#">
-      <!-- Address -->
-        <div class="row">
-          <div class="col-25">
-            <label for="adress">Address</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="adress" name="address" placeholder="Property address..">
-          </div>
-        </div>
-        <!-- Landlord -->
-        <div class="row">
-          <div class="col-25">
-            <label for="landlord">Landlord</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="landlord" name="landlord" placeholder="Landlord name..">
-          </div>
-        </div>
-        <!-- KEEP THIS FOR LATER -->
-        <!--  -->
-        <!-- <div class="row">
-        <div class="col-25">
-        <label for="country">Country</label>
-        </div>
-        <div class="col-75">
-        <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-        </select>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-25">
-        <label for="tenants">Tenant(s)</label>
-        </div>
-        <div class="col-75">
-        <textarea id="tenants" name="tenants" placeholder="Tenants names.." style="height:200px"></textarea>
-        </div>
-        </div>
-        -->
-        <!--  -->
-        <!--  -->
-        <!-- Tenants -->
-        <div class="row">
-          <div class="col-25">
-            <label for="tenants">Tenant(s)</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="tenants" name="tenants" placeholder="Tenants names.."/>
-          </div>
-        </div>
-        <!-- Inspection Required -->
-        <div class="row">
-          <div class="col-25">
-            <label for="inspection">Inspection Required</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="inspection" name="inspection" placeholder="Inspection Required?"/>
-          </div>
-        </div>
-        <!-- Notes -->
-        <div class="row">
-          <div class="col-25">
-            <label for="notes">notes</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="notes" name="notes" placeholder="Notes.."/>
-          </div>
-        </div>
-        <div class="row">
-          <input type="submit" value="Submit">
-        </div>
-      </form>
-  </div>
-  </body>
-</html>
+
+
+<?php
+
+//DB conn, 
+$username = "djeffery"; 
+$password = "2021509"; 
+$database = "djeffery_collab-dev-module"; 
+$mysqli = new mysqli("localhost", $username, $password, $database); 
+ 
+$id = $_GET['id']; // get id through query string
+
+$qry = mysqli_query($mysqli,"select * from tbl_properties where id='$id'"); // select query
+
+$data = mysqli_fetch_array($qry); // fetch data
+
+if(isset($_POST['update'])) // when click on Update button
+{
+    $propertyname = $_POST['propertyname'];
+    $landlord = $_POST['landlord'];
+    $tenants = $_POST['tenants'];
+    $actionsdue = $_POST['actionsdue'];
+    $actiontype = $_POST['actiontype'];
+    $inspectionsdue = $_POST['inspectionsdue'];
+    $inspectiontype = $_POST['inspectiontype'];
+    $notes = $_POST['notes'];
+	
+    $edit = mysqli_query($mysqli,"update tbl_properties set propertyname='$propertyname', landlord='$landlord', tenants='$tenants', actionsdue='$actionsdue', inspectionsdue='$inspectionsdue', inspectiontype='$inspectiontype', notes='$notes' where id='$id'");
+	
+    if($edit)
+    {
+        mysqli_close($mysqli); // Close connection
+        header("location:index.php"); // redirects to home
+        exit;
+    }
+    else
+    {
+        echo mysqli_error();
+    }    	
+}
+?>
+
+<h3>Update Property Information</h3>
+
+<form method="POST">
+  <input type="text" name="propertyname" value="<?php echo $data['propertyname'] ?>" placeholder="Enter Property Name" Required>
+  <input type="text" name="landlord" value="<?php echo $data['landlord'] ?>" placeholder="Enter Landlord" Required>
+  <input type="text" name="tenants" value="<?php echo $data['tenants'] ?>" placeholder="Enter tenants" Required>
+  <input type="text" name="actionsdue" value="<?php echo $data['actionsdue'] ?>" placeholder="Enter actions due status" Required>
+  <input type="text" name="actiontype" value="<?php echo $data['actiontype'] ?>" placeholder="Enter any actions due" Required>
+  <input type="text" name="inspectionsdue" value="<?php echo $data['inspectionsdue'] ?>" placeholder="Enter inspections due status" Required>
+  <input type="text" name="inspectiontype" value="<?php echo $data['inspectiontype'] ?>" placeholder="Enter any inspections due" Required>
+  <input type="text" name="notes" value="<?php echo $data['notes'] ?>" placeholder="Enter notes" Required>
+  <input type="submit" name="update" value="Update">
+</form>
+

@@ -25,56 +25,57 @@
         <a href="add.php" class="button">Add</a>
         <a href="edit.php" class="button">Edit</a>
       </div>
-      <!-- Property table -->
-      <?php 
-        $username = "djeffery"; 
-        $password = "2021509"; 
-        $database = "djeffery_collab-dev-module"; 
-        $mysqli = new mysqli("localhost", $username, $password, $database); 
-        $query = "SELECT * FROM tbl_properties";
+      
+<!-- TABLE -->
+
+    <table id="properties">
+
+    <tr> 
+        <th>ID</th>
+        <th>Property Name</th>
+        <th>Landlord</th>
+        <th>Tenant(s)</th>
+        <th>Actions Due</th>
+        <th>Action Type</th>
+        <th>Inspections Due</th>
+        <th>Inspection Type</th>
+        <th>Notes</th>
+        <th>Edit</th>
+<?php
+
+    $username = "djeffery"; 
+    $password = "2021509"; 
+    $database = "djeffery_collab-dev-module"; 
+    $mysqli = new mysqli("localhost", $username, $password, $database); 
+       
+$records = mysqli_query($mysqli,"select * from tbl_properties"); // fetch data from database
+
+while($data = mysqli_fetch_array($records))
+{
+?>
+  <tr>
+    <td><?php echo $data['id']; ?></td>
+    <td><?php echo $data['propertyname']; ?></td>
+    <td><?php echo $data['landlord']; ?></td>
+    <td><?php echo $data['tenants']; ?></td>
+    <td><?php echo $data['actionsdue']; ?></td>
+    <td><?php echo $data['actiontype']; ?></td>
+    <td><?php echo $data['inspectionsdue']; ?></td>
+    <td><?php echo $data['inspectiontype']; ?></td>
+    <td><?php echo $data['notes']; ?></td>
+    <td><a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a></td>
+    <!-- <td><a href="delete.php?id=<?php echo $data['id']; ?>">Delete</a></td> -->
+  </tr>	
+<?php
+}
+?>
 
 
-        echo '<table id="properties"> 
-            <tr> 
-                <th>ID</th>
-                <th>Property Name</th>
-                <th>Landlord</th>
-                <th>Tenant(s)</th>
-                <th>Actions Due</th>
-                <th>Action Type</th>
-                <th>Inspections Due</th>
-                <th>Inspection Type</th>
-                <th>Notes</th>
-            </tr>';
+    </table>
 
-        if ($result = $mysqli->query($query)) {
-            while ($row = $result->fetch_assoc()) {
-                $id = $row["id"];
-                $propertyName = $row["property name"];
-                $landlord = $row["landlord"];
-                $tenants = $row["tenants"];
-                $actionsDue = $row["actions due"];
-                $actionType = $row["action type"];
-                $inspectionsDue = $row["inspections due"];
-                $inspectionType = $row["inspection type"];
-                $notes = $row["notes"];
 
-                echo '<tr> 
-                        <td>'.$id.'</td> 
-                        <td>'.$propertyName.'</td> 
-                        <td>'.$landlord.'</td> 
-                        <td>'.$tenants.'</td> 
-                        <td>'.$actionsDue.'</td> 
-                        <td>'.$actionType.'</td> 
-                        <td>'.$inspectionsDue.'</td> 
-                        <td>'.$inspectionType.'</td> 
-                        <td>'.$notes.'</td> 
 
-                    </tr>';
-            }
-            $result->free();
-        } 
-        ?>
+
 
     </div>
   </body>

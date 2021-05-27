@@ -198,7 +198,7 @@ label {
   display: inline-block;
 }
 
-input[type="submit"] {
+#submit {
   background-color: #83FFC3;
   color: black;
   padding: 12px 20px;
