@@ -66,7 +66,7 @@ while($data = mysqli_fetch_array($records))
     <td><?php echo $data['main_action_type']; ?></td>
     <td><?php echo $data['main_inspection_due']; ?></td>
     <td><?php echo $data['main_inspection_type']; ?></td>
-    <td><a href="edit.php?id=<?php echo $data['main_id']; ?>" class="edit">Edit</a></td>
+    <td><a href="edit.php?main_id=<?php echo $data['main_id']; ?>" class="edit">Edit</a></td>
     <!-- <td><a href="delete.php?id=<?php echo $data['main_id']; ?>">Delete</a></td> -->
   </tr>	
 <?php

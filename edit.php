@@ -8,7 +8,7 @@ $password = "2021509";
 $database = "djeffery_groupDB"; 
 $mysqli = new mysqli("localhost", $username, $password, $database); 
  
-$id = $_GET['id']; // get id through query string
+$main_id = $_GET['main_id']; // get id through query string
 
 $qry = mysqli_query($mysqli,"select * from main_table where main_id='$main_id'"); // select query
 
