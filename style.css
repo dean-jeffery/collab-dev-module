@@ -155,7 +155,6 @@ header {
   box-shadow: 0 10px 40px 1px #e7e7e7;
   padding: 15px 0;
   border-radius: 0.3rem;
-  
 }
 .form-heading h2 {
   text-align: center;
@@ -182,6 +181,10 @@ header {
 
 /* TEMP */
 
+.edit {
+  color: blue;
+}
+
 input[type="text"],
 select,
 textarea {
@@ -199,7 +202,7 @@ label {
 }
 
 #submit {
-  background-color: #83FFC3;
+  background-color: #83ffc3;
   color: black;
   padding: 12px 20px;
   border: none;
@@ -211,7 +214,7 @@ label {
 }
 
 form .row {
-	padding-top: 10px;
+  padding-top: 10px;
 }
 
 .col-25 {

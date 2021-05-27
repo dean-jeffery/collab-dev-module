@@ -23,7 +23,6 @@
       <!-- Button row -->
       <div class="button-space">
         <a href="add.php" class="button">Add</a>
-        <a href="edit.php" class="button">Edit</a>
       </div>
       
 <!-- TABLE -->
@@ -32,39 +31,43 @@
 
     <tr> 
         <th>ID</th>
-        <th>Property Name</th>
+        <th>Property Number</th>
+        <th>Property Street name</th>
+        <th>Property Postcode</th>
         <th>Landlord</th>
-        <th>Tenant(s)</th>
+        <th>Current Tenant(s)</th>
+        <th>Previous Tenant(s)</th>
         <th>Actions Due</th>
         <th>Action Type</th>
         <th>Inspections Due</th>
         <th>Inspection Type</th>
-        <th>Notes</th>
         <th>Edit</th>
 <?php
 
     $username = "djeffery"; 
     $password = "2021509"; 
-    $database = "djeffery_collab-dev-module"; 
+    $database = "djeffery_groupDB"; 
     $mysqli = new mysqli("localhost", $username, $password, $database); 
        
-$records = mysqli_query($mysqli,"select * from tbl_properties"); // fetch data from database
+$records = mysqli_query($mysqli,"select * from main_table"); // fetch data from database
 
 while($data = mysqli_fetch_array($records))
 {
 ?>
   <tr>
-    <td><?php echo $data['id']; ?></td>
-    <td><?php echo $data['propertyname']; ?></td>
-    <td><?php echo $data['landlord']; ?></td>
-    <td><?php echo $data['tenants']; ?></td>
-    <td><?php echo $data['actionsdue']; ?></td>
-    <td><?php echo $data['actiontype']; ?></td>
-    <td><?php echo $data['inspectionsdue']; ?></td>
-    <td><?php echo $data['inspectiontype']; ?></td>
-    <td><?php echo $data['notes']; ?></td>
-    <td><a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a></td>
-    <!-- <td><a href="delete.php?id=<?php echo $data['id']; ?>">Delete</a></td> -->
+    <td><?php echo $data['main_id']; ?></td>
+    <td><?php echo $data['main_property_number']; ?></td>
+    <td><?php echo $data['main_property_street']; ?></td>
+    <td><?php echo $data['main_property_postcode']; ?></td>
+    <td><?php echo $data['main_landlord_owner']; ?></td>
+    <td><?php echo $data['main_current_tenants']; ?></td>
+    <td><?php echo $data['main_past_tenants']; ?></td>
+    <td><?php echo $data['main_action_due']; ?></td>
+    <td><?php echo $data['main_action_type']; ?></td>
+    <td><?php echo $data['main_inspection_due']; ?></td>
+    <td><?php echo $data['main_inspection_type']; ?></td>
+    <td><a href="edit.php?id=<?php echo $data['main_id']; ?>" class="edit">Edit</a></td>
+    <!-- <td><a href="delete.php?id=<?php echo $data['main_id']; ?>">Delete</a></td> -->
   </tr>	
 <?php
 }

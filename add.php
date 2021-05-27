@@ -26,108 +26,101 @@
   <!-- Button row -->
     <div class="button-space">
       <a href="index.php" class="button">Home</a>
-      <a href="edit.php" class="button">Edit</a>
     </div>
       <div class="form-heading">
         <h2>Add New Property</h2>
       </div>
 <!-- ADD PROPERTY FORM -->
       <form action="insert.php" method="POST">
-      <!-- Property Name -->
+      <!-- Property Number -->
         <div class="row">
           <div class="col-25">
-            <label for="propertyName">Property Name:</label>
+            <label for="main_property_number">Property Number:</label>
           </div>
           <div class="col-75">
-            <input type="text" id="propertyName" name="propertyName" placeholder="Property Name..">
+            <input type="text" id="main_property_number" name="main_property_number" placeholder="Property Number..">
+          </div>
+        </div>
+        <!-- Street -->
+        <div class="row">
+          <div class="col-25">
+            <label for="main_property_street">Property Street</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="main" name="main_property_street" placeholder="Street name..">
+          </div>
+        </div>
+        
+        <!-- Postcode -->
+        <div class="row">
+          <div class="col-25">
+            <label for="main_property_postcode">Postcode</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="main_property_postcode" name="main_property_postcode" placeholder="Postcode.."/>
           </div>
         </div>
         <!-- Landlord -->
         <div class="row">
           <div class="col-25">
-            <label for="landlord">Landlord</label>
+            <label for="main_landlord_owner">Landlord</label>
           </div>
           <div class="col-75">
-            <input type="text" id="landlord" name="landlord" placeholder="Landlord name..">
+            <input type="text" id="main_landlord_owner" name="main_landlord_owner" placeholder="Landlord.."/>
           </div>
         </div>
-        <!-- KEEP THIS FOR LATER -->
-        <!--  -->
-        <!-- <div class="row">
-        <div class="col-25">
-        <label for="country">Country</label>
-        </div>
-        <div class="col-75">
-        <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-        </select>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-25">
-        <label for="tenants">Tenant(s)</label>
-        </div>
-        <div class="col-75">
-        <textarea id="tenants" name="tenants" placeholder="Tenants names.." style="height:200px"></textarea>
-        </div>
-        </div>
-        -->
-        <!--  -->
-        <!--  -->
-        <!-- Tenants -->
+        <!-- Current tenants -->
         <div class="row">
           <div class="col-25">
-            <label for="tenants">Tenant(s)</label>
+            <label for="main_current_tenants">Current Tenant(s)</label>
           </div>
           <div class="col-75">
-            <input type="text" id="tenants" name="tenants" placeholder="Tenants names.."/>
+            <input type="text" id="main_current_tenants" name="main_current_tenants" placeholder="Current Tenant(s).."/>
           </div>
         </div>
-        <!-- Actions Due -->
+        <!-- Past Tenants -->
         <div class="row">
           <div class="col-25">
-            <label for="actionsDue">Actions Due</label>
+            <label for="main_past_tenants">Past Tenant(s)</label>
           </div>
           <div class="col-75">
-            <input type="text" id="actionsDue" name="actionsDue" placeholder="Actions Due"/>
+            <input type="text" id="main_past_tenants" name="main_past_tenants" placeholder="Past Tenant(s).."/>
           </div>
         </div>
-        <!-- Actions Type -->
-        <div class="row">
-          <div class="col-25">
-            <label for="actionType">Action Type</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="actionType" name="actionType" placeholder="Action Type"/>
-          </div>
-        </div>
-        <!-- Inspections Due -->
-        <div class="row">
-          <div class="col-25">
-            <label for="inspectionsDue">Inspections Due</label>
-          </div>
-          <div class="col-75">
-            <input type="text" id="inspectionsDue" name="inspectionsDue" placeholder="Inspections Due"/>
-          </div>
-        </div>
-         <!-- Inspection Type -->
+         <!-- Action due -->
          <div class="row">
           <div class="col-25">
-            <label for="inspectionType">Inspection Type</label>
+            <label for="main_action_due">Action due</label>
           </div>
           <div class="col-75">
-            <input type="text" id="inspectionType" name="inspectionType" placeholder="Inspection Type"/>
+            <input type="text" id="main_action_due" name="main_action_due" placeholder="Action Due"/>
           </div>
         </div>
-        <!-- Notes -->
+        <!-- Action Type -->
         <div class="row">
           <div class="col-25">
-            <label for="notes">notes</label>
+            <label for="main_action_type">Action type</label>
           </div>
           <div class="col-75">
-            <input type="text" id="notes" name="notes" placeholder="Notes.."/>
+            <input type="text" id="main_action_type" name="main_action_type" placeholder="Action Type.."/>
+          </div>
+        </div>
+        <!-- Inspection due-->
+        <div class="row">
+          <div class="col-25">
+            <label for="main_inspection_due">Inspection due</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="main_inspection_due" name="main_inspection_due" placeholder="Inspection Due"/>
+          </div>
+        </div>
+        <!-- Inspection type-->
+        <div class="row">
+          <div class="col-25">
+            <label for="main_inspection_type">Inspection Type</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="main_inspection_type" name="main_inspection_type" placeholder="Inspection Type"/>
           </div>
         </div>
         <div class="row">
